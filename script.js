@@ -12,18 +12,14 @@ const equal = document.querySelector('.equal');
 const point = document.querySelector('.point');
 const errorSpan = document.querySelector('.error-span');
 let equalBtnClicked = false;
-let displayedValue; //Cette variable est set ici et modifier un peu partt par plusieurs fction differente. Ainsi elle transporte
-// partout avec elle sa valeur qu'on peut changer au besoin. Differencie bien pk j'utilise displayed value (mettre a jour la valeur du calcule,
-// rien a voir avec le l'affichage c purment pr transporter la valeur) vs l'affichage dans la div display où il faut utiliser display.txtcontent.
+let displayedValue;
 HTMLDivElement.prototype.populateDisplay = function(){
   let buttonValue = this.textContent;
-  if (/\d/.test(this.textContent) && (equalBtnClicked)) display.textContent="";  //cette seul ligne permet de remettre le compteur à zéro apres avoir cliqué sur equal
-  equalBtnClicked = false; // réinitialise la possibilité de fr égale (évaluer)      //si je tape une touche digit. Par contre si un opérateur il continue le calcule sur le résultat précédent
+  if (/\d/.test(this.textContent) && (equalBtnClicked)) display.textContent="";
+  equalBtnClicked = false;
   displayedValue = display.textContent += buttonValue;
 };
-//y'a un vrai aspect technique hyper interssant dans cette facon de fr cette egalité. Apres avoir clické sur égale on le resultat
-//dans display.txtcontent c le resultat. La on reset displayvalue avec ce resultat auquel on peu incrémenter tt de en cliquant sur
-// de nvelle touches right away.
+
 
 HTMLDivElement.prototype.pointFunction = function(){
 
@@ -32,11 +28,11 @@ HTMLDivElement.prototype.pointFunction = function(){
   if (equalBtnClicked) {
     display.textContent = "0.";
     equalBtnClicked = false;
-  } else {//ce qui se passe si ya une nvelle operation en cours (equalBtnClicked = false)
-      if (!/\d/.test(lastItem)){ // Si le dernier item n'est pas un chiffre (dc c un un operateur)
-        displayedValue = display.textContent += "0.";             //metre equalbtncliked a false ?????
-      } else { //si c un nbr qui inclut pas déjà un point alors on ajoute un. Si non, on fait rien.
-        if (!lastItem.includes(".")) this.populateDisplay(); //normalement ya pas a mettre ca
+  } else {
+      if (!/\d/.test(lastItem)){
+        displayedValue = display.textContent += "0.";
+      } else {
+        if (!lastItem.includes(".")) this.populateDisplay();
       }
   }
 };
