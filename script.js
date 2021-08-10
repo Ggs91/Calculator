@@ -13,6 +13,7 @@ const point = document.querySelector('.point');
 const errorSpan = document.querySelector('.error-span');
 let equalBtnClicked = false;
 let displayedValue;
+
 HTMLDivElement.prototype.populateDisplay = function(){
   let buttonValue = this.textContent;
   if (/\d/.test(this.textContent) && (equalBtnClicked)) display.textContent="";
@@ -20,9 +21,7 @@ HTMLDivElement.prototype.populateDisplay = function(){
   displayedValue = display.textContent += buttonValue;
 };
 
-
 HTMLDivElement.prototype.pointFunction = function(){
-
   const operationSplitedArray = display.textContent.split(/\s*([-+x/])\s*/);
   const lastItem = operationSplitedArray[operationSplitedArray.length-1];
   if (equalBtnClicked) {
