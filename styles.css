@@ -1,0 +1,114 @@
+.items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 0.4vh black;
+  border-radius: 3vh;
+  background-color: #B0B0B0;
+  cursor: pointer;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: 1fr repeat(5, 3fr) 1fr;
+  grid-template-rows: repeat(9, 2fr) 1fr;
+  border-radius: 4vh;
+  width: 75vh;
+	height: 90vh;
+  min-height: 230px;
+  min-width: 200px;
+  margin: auto;
+  font-size: 4vh;
+  background-color: #989898;
+  color: white;
+  border: solid 0.4vh black;
+}
+
+#digits-container { /* C'est un container qui va être une grid mais aussi un item, je vais utiliser grid-column/row pour le
+  placer sur le container principal, tout comme un item */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 0.6vh;
+  grid-column: 2/5; /*ces ppiété sont pour les items normalment. Là je fait de ce container grid un item aussi.*/
+  grid-row: 6/10;
+}
+
+#operators-container{
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: 4;
+  grid-column: 6/7;
+  grid-row: 6/10;
+  grid-gap: 0.6vh;
+}
+
+.error-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column:3/6;
+  grid-row:4/5;
+}
+
+.error-span {
+  transition-property: all;
+  transition-duration: 1.5s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
+
+  opacity: 0;
+  border-radius: 50px;
+  width: 100%;
+  height: 70%;
+  font-size: 58%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.display-error-message{
+  background-color:	rgb(112,112,112, 0.8);
+  opacity: 1;
+}
+
+.point {
+  grid-column:3/4;
+  grid-row:4/5;
+}
+
+.zero {
+  grid-column: 2/3;
+  grid-row: 4/5;
+}
+
+.display {
+  grid-column: 2/7;
+  grid-row: 2/4;
+  font-size: 7vh;
+  color:black;
+  background-color: #C8C8C8;
+  overflow-x: auto;
+  border: 0.5vh black solid;
+}
+
+.delete {
+  grid-column: 5/7;
+  grid-row: 5/6;
+  margin: 0px 0px 5px 5px;
+  background-color:#FF7F50;
+}
+
+.clear{
+  grid-column:4/5;
+  grid-row: 5/6;
+  margin-bottom: 5px;
+  background-color: #0099FF;
+}
+
+.equal {
+  grid-column: 5/6;
+  grid-row: 9/10;
+  margin: 5px 5px 0px 5px;
+  background-color: #20B2AA;
+}

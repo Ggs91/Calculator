@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="wrapper">
+    <div id="container">
+      <div class="display items"></div>
+      <div class="delete items" data-key="8"><=</div>
+      <div class="clear items" data-key="32">C</div>
+      <div class="equal items" data-key="13">=</div>
+      <div class="error-div">
+        <span class="error-span">Veuillez utiliser un format valide</span>
+      </div>
+      <div id="digits-container">  <!-- Intérêt de mettre des grid dans la grid principale ? Elle garde les même "référence de -->
+        <div class="seven items button" data-key="103">7</div> <!-- grillage". Même alignement, taille etc... que sur la principale-->
+        <div class="eight items button" data-key="104">8</div>
+        <div class="nine items button" data-key="105">9</div>
+        <div class="four items button" data-key="100">4</div>
+        <div class="five items button" data-key="101">5</div>
+        <div class="six items button" data-key="102">6</div>
+        <div class="one items button" data-key="97">1</div>
+        <div class="two items button" data-key="98">2</div>
+        <div class="three items button" data-key="99">3</div>
+        <div class="zero items button" data-key="96">0</div>
+        <div class="point items" data-key="110">.</div>
+      </div>
+      <div id="operators-container">
+        <div class="divide items button" data-key="111">/</div>
+        <div class="multiply items button" data-key="106">x</div>
+        <div class="minus items button" data-key="109">-</div>
+        <div class="plus items button" data-key="107">+</div>
+      </div>
+    </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
